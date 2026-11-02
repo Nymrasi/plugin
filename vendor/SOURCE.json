@@ -1,0 +1,37 @@
+{
+  "syncedAt": "2026-10-24T17:03:47.447Z",
+  "bots": {
+    "repo": "bots",
+    "commit": "b91e59aa9b4f968545e997ca92d020bfa5b73ec5",
+    "subject": "scanbot: Node 26.12.1",
+    "files": [
+      "scanbot/src/model.ts",
+      "scanbot/src/relay.ts",
+      "scanbot/src/scanner.ts",
+      "scanbot/src/ens.ts",
+      "scanbot/src/parse.ts"
+    ]
+  },
+  "engine": {
+    "repo": "privacy-scan",
+    "commit": "f0b9f0e32df312caa447e52538b6e69c54810697",
+    "subject": "Base's and Arbitrum One's token lists are read as their two directions side by side. Their Blockscouts are slow on an address's token transfers of both directions at once and fast on each direction: on 24-10 Base took 8 to 17 s for one page of vitalik.eth's (filter=to 1 to 10 s, filter=from 1 to 6 s), and Arbitrum One 21 s for three pages of both against 2 s for three of one; a scan on nymra.si lost Base's whole token list to two 15 s timeouts. ChainDef.tokenSplit reads filter=to and filter=from at once and merges them into the list Blockscout gives for both: the same rows in the same order (newest block first, then log index), a transfer to itself once (checked on two real wallets, 250 and 207 rows over five pages, row for row). A direction with more rows than it read (its count, a failed later page, a scan that learned the address is no person) bounds the merge, so the list is always the newest part of the whole, never one with a hole. Base also gets one 30 s try per token page (tokenPageMs), like Arbitrum One. OP Mainnet and Ethereum are fast either way and stay as they are. New test/token-split.test.ts (8 tests) and 10 mutants",
+    "patches": [],
+    "from": "privacy-scan main (not through the bot)"
+  },
+  "patches": [
+    "scanbot/src/model.ts: '@noble/hashes/sha3.js' -> '../../noble-hashes/sha3.js'",
+    "scanbot/src/ens.ts: '@noble/hashes/sha3.js' -> '../../noble-hashes/sha3.js'",
+    "scanbot/src/parse.ts: '@noble/hashes/sha3.js' -> '../../noble-hashes/sha3.js'"
+  ],
+  "noble": {
+    "package": "@noble/hashes",
+    "version": "2.4.0",
+    "files": [
+      "sha3.js",
+      "_u64.js",
+      "utils.js"
+    ],
+    "integrity": "sha512-X5XaVWZIBCT7HHZGm5I7ZQXDwLG+bGXuSrMQAW+7Zvl87h1kmc1ZB1VSRJcpUfoUrGQp4Fkoxm5kZ+Ms+aW+eA=="
+  }
+}

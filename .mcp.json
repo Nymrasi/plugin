@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "nymra-privacy-scan": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/server/main.ts"
+      ],
+      "env": {
+        "NYMRA_CONFIG_ALCHEMY_API_KEY": "${user_config.alchemy_api_key}",
+        "NYMRA_CONFIG_BLOCKSCOUT_API_KEY": "${user_config.blockscout_api_key}",
+        "NYMRA_CONFIG_NODEREAL_API_KEY": "${user_config.nodereal_api_key}",
+        "NYMRA_CONFIG_ETHERSCAN_API_KEY": "${user_config.etherscan_api_key}"
+      }
+    }
+  }
+}

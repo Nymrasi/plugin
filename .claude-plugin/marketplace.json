@@ -1,0 +1,12 @@
+{
+  "name": "nymra",
+  "description": "Nymra's plugins for Claude",
+  "owner": { "name": "Nymra", "url": "https://nymra.si" },
+  "plugins": [
+    {
+      "name": "nymra-privacy-scan",
+      "source": "./",
+      "description": "The Nymra Privacy Scan: the Privacy Score of any EVM wallet, every finding with its evidence, and a fix plan, run on your own computer."
+    }
+  ]
+}

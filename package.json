@@ -1,0 +1,18 @@
+{
+  "name": "nymra-privacy-scan-plugin",
+  "private": true,
+  "version": "0.1.0",
+  "description": "The Nymra Privacy Scan for Claude: a local MCP server around the open privacy-scan engine.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "typecheck": "../privacy-scan/node_modules/.bin/tsc -p .",
+    "mutate": "node scripts/mutate.mjs",
+    "sync": "node scripts/sync.mjs",
+    "start": "node server/main.ts"
+  }
+}

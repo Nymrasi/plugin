@@ -1,0 +1,44 @@
+{
+  "name": "nymra-privacy-scan",
+  "displayName": "Nymra Privacy Scan",
+  "version": "0.1.0",
+  "description": "How traceable is your wallet? Scan any EVM wallet or ENS name for its Nymra Privacy Score, every finding with its evidence, and a fix plan. The scan runs on your own computer.",
+  "author": { "name": "Nymra", "url": "https://nymra.si" },
+  "homepage": "https://nymra.si",
+  "license": "MIT",
+  "keywords": ["privacy", "wallet", "ethereum", "evm", "ens", "onchain"],
+  "userConfig": {
+    "alchemy_api_key": {
+      "type": "string",
+      "title": "Alchemy API key (optional)",
+      "description": "Reads Base and Polygon PoS, whose explorers answer a browser only. Stays on this computer and goes to Alchemy only.",
+      "sensitive": true,
+      "required": false,
+      "default": ""
+    },
+    "blockscout_api_key": {
+      "type": "string",
+      "title": "Blockscout API key (optional)",
+      "description": "Reads Arbitrum One and Robinhood Chain, whose explorers answer a browser only. Stays on this computer and goes to Blockscout only.",
+      "sensitive": true,
+      "required": false,
+      "default": ""
+    },
+    "nodereal_api_key": {
+      "type": "string",
+      "title": "NodeReal API key (optional)",
+      "description": "Reads BNB Smart Chain. Stays on this computer and goes to NodeReal only.",
+      "sensitive": true,
+      "required": false,
+      "default": ""
+    },
+    "etherscan_api_key": {
+      "type": "string",
+      "title": "Etherscan API key (optional)",
+      "description": "Fills a gap in Polygon PoS's own index when there is one. Stays on this computer and goes to Etherscan only.",
+      "sensitive": true,
+      "required": false,
+      "default": ""
+    }
+  }
+}
