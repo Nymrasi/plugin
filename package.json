@@ -2,7 +2,7 @@
   "name": "nymra-privacy-scan-plugin",
   "private": true,
   "version": "0.1.0",
-  "description": "The Nymra Privacy Scan for Claude: a local MCP server around the open privacy-scan engine.",
+  "description": "The Nymra Privacy Scan: a local MCP server around the open privacy-scan engine, for Claude and any app that runs MCP servers.",
   "license": "MIT",
   "type": "module",
   "engines": {

@@ -1,6 +1,6 @@
 {
   "name": "nymra",
-  "description": "Nymra's plugins for Claude",
+  "description": "Nymra's plugins: the Nymra Privacy Scan as a local MCP server",
   "owner": { "name": "Nymra", "url": "https://nymra.si" },
   "plugins": [
     {
